@@ -113,13 +113,6 @@ It looks like you are setting up a website for a Software Carpentry curriculum b
 Check DS curriculum
 {% endcomment %}
 
-{% if info.carpentry == "ds" %}
-{% unless info.curriculum == "ds-cr" or info.curriculum == "ds-docker" or info.curriculum == "ds-dl-intro" or info.curriculum == "ds-gpu" or info.curriculum == "ds-parallel" or info.curriculum == "ds-rpackaging" or info.curriculum == "ds-geospatial"%}
-<div class="alert alert-warning">
-It looks like you are setting up a website for a Digital Skills curriculum but you haven't specified the curriculum type in the <code>_data/data.csv</code> file (current value in <code>_data/data.csv</code>: "<strong>{{ info.curriculum }}</strong>", possible values: <code>ds-cr</code>, <code>ds-docker</code>, <code>ds-dl-intro</code>, <code>ds-gpu</code>, <code>ds-parallel</code> or <code>ds-rpackaging</code>). After editing this file, you need to run <code>make serve</code> again to see the changes reflected.
-</div>
-{% endunless %}
-{% endif %}
 
 {% comment %}
 EVENTBRITE
@@ -290,11 +283,13 @@ Display the contact email address set in the configuration file.
 {% endcomment %}
 <p id="contact">
   <strong>Contact:</strong>
-  Please email
+  Please email <a href='mailto:s.vanderburg@esciencecenter.nl'>s.vanderburg@esciencecenter.nl</a>
+  or <a href='mailto:c.geng@esciencecenter.nl'>c.geng@esciencecenter.nl</a> for 
+  technical questions (for example about setup issues or prerequisites).
   {% if site.email %}
   {% for email in site.email %}
   {% if forloop.last and site.email.size > 1 %}
-  or
+  Or email
   {% else %}
   {% unless forloop.first %}
   ,
@@ -305,7 +300,7 @@ Display the contact email address set in the configuration file.
   {% else %}
   to-be-announced
   {% endif %}
-  for more information.
+  for other questions or more information.
 </p>
 
 {% comment %}
