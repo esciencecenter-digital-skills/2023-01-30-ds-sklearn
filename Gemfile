@@ -12,3 +12,7 @@ gem 'jekyll', "~> 4.2"
 # gem 'github-pages', group: :jekyll_plugins
 
 gem "webrick", "~> 1.7"
+
+gem "jekyll-sass-converter", "~> 2.0"
+
+
